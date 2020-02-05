@@ -4,9 +4,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.4.1.js"></script>
+<title>Registration</title>
 </head>
 <body>
-Test
+	<form name="registrationForm" action="RegistrationServlet" method="post">
+		<input type="text" name="name"/><br/>
+		<input type="password" name="password"/><br/>
+		<input type="submit" id="regButton" value="Register"/>
+	</form>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			console.log("Jquery");
+			$('form').each(function(){
+				console.log($(this).find(':input'));
+			});
+		});
+	</script>
 </body>
 </html>
