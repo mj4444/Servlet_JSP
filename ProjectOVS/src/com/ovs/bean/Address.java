@@ -3,7 +3,7 @@ package com.ovs.bean;
 public class Address {
 
 	private String houseNo;
-	private String Street;
+	private String street;
 	private String block;
 	private String district;
 	private String city;
@@ -16,7 +16,7 @@ public class Address {
 			String country) {
 		super();
 		this.houseNo = houseNo;
-		Street = street;
+		this.street = street;
 		this.block = block;
 		this.district = district;
 		this.city = city;
@@ -30,10 +30,10 @@ public class Address {
 		this.houseNo = houseNo;
 	}
 	public String getStreet() {
-		return Street;
+		return street;
 	}
 	public void setStreet(String street) {
-		Street = street;
+		this.street = street;
 	}
 	public String getBlock() {
 		return block;
@@ -66,7 +66,7 @@ public class Address {
 		this.country = country;
 	}
 	public String toString() {
-		return "Address [houseNo=" + houseNo + ", Street=" + Street + ", block=" + block + ", district=" + district
+		return "Address [houseNo=" + houseNo + ", Street=" + street + ", block=" + block + ", district=" + district
 				+ ", city=" + city + ", state=" + state + ", country=" + country + "]";
 	}
 	
