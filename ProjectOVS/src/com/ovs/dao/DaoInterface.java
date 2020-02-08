@@ -1,6 +1,6 @@
 package com.ovs.dao;
 
-public interface OperationHandlerInterface {
+public interface DaoInterface {
 
 	public String loginHandler(String email,String password);
 	

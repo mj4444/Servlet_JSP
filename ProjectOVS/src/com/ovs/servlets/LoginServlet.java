@@ -7,9 +7,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.ovs.dao.OperationHandler;
-import com.ovs.dao.OperationHandlerInterface;
+import com.ovs.dao.DaoInterface;
+import com.ovs.dao.DaoModel;
 
 /**
  * Servlet implementation class RegistrationServlet
@@ -17,7 +16,7 @@ import com.ovs.dao.OperationHandlerInterface;
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	
-	OperationHandlerInterface handlerInterface=new OperationHandler();
+	DaoInterface daoInterface=new DaoModel();
 	
 	private static final long serialVersionUID = 1L;
     
@@ -37,7 +36,7 @@ public class LoginServlet extends HttpServlet {
 		String email=request.getParameter("email");
 		String password=request.getParameter("password");
 		PrintWriter printWriter=response.getWriter();
-		printWriter.println(handlerInterface.loginHandler(email, password));
+		printWriter.println(daoInterface.loginHandler(email, password));
 	}
 
 }

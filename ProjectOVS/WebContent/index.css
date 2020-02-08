@@ -1,3 +1,26 @@
 *{
 	font-family: Helvetica,arial,sans-serif;
 }
+
+body{
+	height: 90%;
+}
+
+a{
+	text-decoration: none;
+}
+
+a:FOCUS{
+	font-style: none;
+	text-decoration: none;
+}
+
+a:active, a:hover {
+	text-decoration: underline;
+}
+
+.regLink{
+	width: 50%;
+	margin: auto;
+	margin-top: 10px;
+}

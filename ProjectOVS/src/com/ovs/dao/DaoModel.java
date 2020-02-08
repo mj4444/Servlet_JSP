@@ -6,8 +6,10 @@ import java.sql.SQLException;
 
 import com.ovs.utility.ConnectionProvider;
 
-public class DaoModel {
-	public String doLogin(String email,String password){
+public class DaoModel implements DaoInterface{
+
+	@Override
+	public String loginHandler(String email, String password) {
 		Connection connection=ConnectionProvider.getConnection();
 		String message="Email or Password is not correct";
 		String loginQuery="Select * from login where email=? and password=?";
@@ -26,4 +28,5 @@ public class DaoModel {
 		ConnectionProvider.closeConnection();
 		return message;
 	}
+	
 }
