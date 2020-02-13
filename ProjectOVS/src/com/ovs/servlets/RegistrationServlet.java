@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.ovs.bean.Address;
 import com.ovs.bean.Person;
+import com.ovs.dao.DaoInterface;
+import com.ovs.dao.DaoModel;
 
 /**
  * Servlet implementation class RegistrationServlet
@@ -18,6 +20,8 @@ import com.ovs.bean.Person;
 public class RegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	DaoInterface daoInterface=new DaoModel();
+	
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -41,7 +45,9 @@ public class RegistrationServlet extends HttpServlet {
 		String password=request.getParameter("password");
 		Address address=new Address(request.getParameter("houseNo"), request.getParameter("street"), request.getParameter("block"), request.getParameter("district"), request.getParameter("city"), request.getParameter("state"), request.getParameter("country"));
 		Person person=new Person(id, name, dob, contactNo, emailId, password, address);
+		daoInterface.registrationHandler(person);
 		System.out.println(person);
+		
 	}
 
 }
