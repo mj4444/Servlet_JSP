@@ -13,7 +13,7 @@ public class DaoModel implements DaoInterface{
 	public String loginHandler(String email, String password) {
 		Connection connection=ConnectionProvider.getConnection();
 		String message="Email or Password is not correct";
-		String loginQuery="SELECT * FROM login WHERE email=? AND password=?";
+		String loginQuery="SELECT * FROM personLogin WHERE emailId=? AND password=?";
 		try {
 			PreparedStatement preparedStatement=connection.prepareStatement(loginQuery);
 			preparedStatement.setString(1, email);
